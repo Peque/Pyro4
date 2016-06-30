@@ -63,8 +63,8 @@ class Configuration(object):
         self.PICKLE_PROTOCOL_VERSION = pickle.HIGHEST_PROTOCOL
         try:
             import platform
-            if platform.python_implementation() in ('PyPy', 'IronPython'):
-                raise ImportError('Currently dill is not supported with PyPy and IronPython')
+            if platform.python_implementation() == 'IronPython':
+                raise ImportError('Currently dill is not supported with IronPython')
             import dill
             self.DILL_PROTOCOL_VERSION = dill.HIGHEST_PROTOCOL  # Highest protocol
         except ImportError:
