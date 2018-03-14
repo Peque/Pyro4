@@ -25,8 +25,7 @@ install:
   - cmd: conda create --quiet --name conda-env-%PYTHON_VERSION% python=%PYTHON_VERSION%
   - cmd: activate conda-env-%PYTHON_VERSION%
   - cmd: pip install --disable-pip-version-check --user --upgrade pip
-  - cmd: pip install -e test_requirements.txt
-  - cmd: pip install pytest pytest-xdist
+  - cmd: pip install -r test_requirements.txt
 
 test_script:
   - cmd: cd tests && python -bb -tt -E -Wall run_testsuite.py
