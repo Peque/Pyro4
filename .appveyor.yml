@@ -26,6 +26,7 @@ install:
   - cmd: activate conda-env-%PYTHON_VERSION%
   - cmd: pip install --disable-pip-version-check --user --upgrade pip
   - cmd: pip install -r test_requirements.txt
+  - cmd: pip install .
 
 test_script:
   - cmd: cd tests && python -bb -tt -E -Wall run_testsuite.py
